@@ -8,10 +8,13 @@ class Calendar(models.Model):
 	def __str__(self):
 		return self.title
 
+	class Admin:
+		pass
+
 
 class Check(models.Model):
-	day      = models.DateField()
-	calendar = models.ForeignKey(Calendar)
+	day      = models.DateField(core=True)
+	calendar = models.ForeignKey(Calendar, edit_inline=models.TABULAR, num_in_admin=5, num_extra_on_change=5)
 
 	def __str__(self):
-		return self.day
+		return self.day.strftime("%d/%m/%Y")
