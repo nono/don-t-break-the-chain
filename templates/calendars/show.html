@@ -1,0 +1,12 @@
+<h1>{{calendar.title}} ({{calendar.year}})</h1>
+
+{% if calendar.check_set.all %}
+<ul>
+    {% for checks in calendar.check_set.all %}
+    <li>{{ checks.day|date:"d/m/Y" }}</li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>Encore rien de fait. Tu attends quoi pour t'y mettre ?</p>
+{% endif %}
+

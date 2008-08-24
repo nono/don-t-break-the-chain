@@ -1,0 +1,9 @@
+{% if calendars %}
+    <ul>
+    {% for calendar in calendars %}
+		<li>{{ calendar.title }} ({{ calendar.year}})</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Aucun calendrier n'est disponible pour le moment.</p>
+{% endif %}
